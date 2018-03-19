@@ -15,19 +15,19 @@ import com.h2k.rmnot.util.Utility;
 import jxl.read.biff.BiffException;
 
 public class RMTests extends UIBaseClass {
-	 
+
 
 
 	@DataProvider(name="DP")
 	public String[][] feedDP() throws BiffException, IOException
 	{
- 
-		  
+
+
 		String arr[][]= Utility.readXlsFile();
 		return arr;
 
 	}
-	
+
 	@Parameters({"categoryName","categoryID","expectedCount"})
 	@Test(priority=1)
 	public void verifyCategoryCount(String categoryName,String categoryID,String expectedCount) throws InterruptedException
@@ -39,19 +39,24 @@ public class RMTests extends UIBaseClass {
 		int expected= Integer.parseInt(expectedCount);
 		Assert.assertEquals(actual,expected);
 	}
- 	/**
+
 	@Test(priority=2,dataProvider="DP")
 	public void verifyAllCategoryCount(String categoryName,String categoryID,String expectedCount) throws InterruptedException
 	{
- 		driver.get(url);
+		driver.get(url);
 		HomePage hPage = new HomePage(driver);
 		SpringDealsPage dealsPage = hPage.navigateToSpringDeals();
 		int actual = dealsPage.getCategoryCount(categoryName,categoryID);
 		int expected= Integer.parseInt(expectedCount);
 		Assert.assertEquals(actual,expected);
 	}
-*/
-	
+
+	@Test(priority=3)
+	public void validateCount()
+	{
+
+	}
 }
+
 
 

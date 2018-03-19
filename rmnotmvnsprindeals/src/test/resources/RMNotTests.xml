@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" verbose="5">
+ 
+   <test name="Test+CH">
+  
+  <parameter name="url" value="https://www.retailmenot.com" />
+  <parameter name="browserType" value="CH" />
+  <parameter name="categoryName" value="Spring Deals" />
+  <parameter name="categoryID"  value="seasonal_offers" />
+  <parameter name="expectedCount" value="8" />
+      <classes>
+      <class name="com.h2k.rmnot.tests.RMTests"/>
+    </classes>
+  </test> <!-- Test -->
+ 
+</suite> <!-- Suite -->
